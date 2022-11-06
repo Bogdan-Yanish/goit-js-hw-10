@@ -1,15 +1,12 @@
-export default function fetchCountries(name) {
-    fetch('https://restcountries.com/v2/all')
+export function fetchCountries(name) {
+  return fetch('https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags.svg,languages')
+  // return fetch('https://restcountries.com/v3.1/name/${name}')
+  // return fetch('https://restcountries.com/v3.1/name')
+  // return fetch('https://restcountries.com/v3.1/all')
   .then((response) => {
     if (!response.ok) {
-        throw new Error('Network response was not OK');
+        throw new Error(response.status);
     }
     return response.json();
-  })
-  .then((data) => {
-    console.log('Success:', data);
-  })
-  .catch ((error) => {
-    console.error('Error:', error);
-  })
-};
+  });
+}
