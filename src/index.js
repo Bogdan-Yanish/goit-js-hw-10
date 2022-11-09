@@ -43,11 +43,11 @@ function showCountriesList(countries) {
     .map((country) => {
        return `
        <li class="country__item">
-            <img src="${country.flags.svg} 
-            // alt="${country.name.official} flag" 
+            <img src="${country.flags} 
+            alt="${country.name.official} flag" 
             width="80px" 
-            height="50px">
-            ${country.name.official}
+            height="50px"/>
+            <span style="margin:0; padding:0;">${country.name.official}</span>
        </li>                
         `;
     })
@@ -61,10 +61,10 @@ function showCountriesInfo(countries) {
     .map((country) => {
         return `<ul class="country__item">
         <li>
-            <img style="" src="${country.flags.svg} 
-            // alt="${country.name.official} flag"
+            <img style="" src="${country.flags} 
+            alt="${country.name.official} flag"
             width="150px" 
-            height="70px">
+            height="70px"/>
             <p style="text-transform: uppercase; font-weight: 700; font-size: large;">${country.name.official}</p>    
         </li>
         <li>
