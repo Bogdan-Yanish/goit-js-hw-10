@@ -43,7 +43,7 @@ function searchCountry(event) {
 // }
     
 function renderListCountries(countries) {
-    clearData();
+   
     if (countries.length > 10) {
         clearData();
         Notify.info('Too many matches found. Please enter a more specific name.');          
@@ -74,6 +74,7 @@ function showCountriesList(countries) {
 }
 
 function showCountriesInfo(countries) {
+    clearData();
     const markup = countries
     .map((country) => {
         return `<ul class="country__item">
