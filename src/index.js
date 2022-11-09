@@ -59,7 +59,7 @@ function showCountriesInfo(countries) {
     clearData();
     const markup = countries
     .map((country) => {
-        return `<ul class="country__item">
+        return `<ul>
         <li>
             <img style="" src="${country.flags.svg} 
             alt="${country.name.official} flag"
