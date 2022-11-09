@@ -43,15 +43,15 @@ function searchCountry(event) {
 // }
     
 function renderListCountries(countries) {
-    clearData;
+    clearData();
     if (countries.length > 10) {
-        clearData;
+        clearData();
         Notify.info('Too many matches found. Please enter a more specific name.');          
     } else if (countries.length > 1 && countries.length <= 10) {
-        clearData;
+        clearData();
         showCountriesList(countries);
     } else if (countries.length === 1) {
-        clearData;
+        clearData();
         showCountriesInfo(countries);
     }
 }
@@ -59,13 +59,15 @@ function renderListCountries(countries) {
 function showCountriesList(countries) {
     const markup = countries
     .map((country) => {
-       return `<li>
-            <img style="" src="${country.flags} 
+       return `
+       <li class="country__item">
+            <img style="display:block" src="${country.flags[0]} 
             alt="${country.name.official} flag" 
             width="70px" 
             height="40px">
-            <p style="">${country.name.official}</p>    
-        </li>`;
+            ${country.name.official}
+       </li>                
+        `;
     })
     .join('');
     countryList.innerHTML = markup;
@@ -74,7 +76,7 @@ function showCountriesList(countries) {
 function showCountriesInfo(countries) {
     const markup = countries
     .map((country) => {
-        return `<ul>
+        return `<ul class="country__item">
         <li>
             <img style="" src="${country.flags} 
             alt="${country.name.official} flag"
