@@ -44,7 +44,7 @@ function showCountriesList(countries) {
        return `
        <li class="country__item">
             <img src="${country.flags.svg} 
-            alt="${country.name.official} flag" 
+            // alt="${country.name.official} flag" 
             width="80px" 
             height="50px">
             ${country.name.official}
@@ -62,7 +62,7 @@ function showCountriesInfo(countries) {
         return `<ul class="country__item">
         <li>
             <img style="" src="${country.flags.svg} 
-            alt="${country.name.official} flag"
+            // alt="${country.name.official} flag"
             width="150px" 
             height="70px">
             <p style="text-transform: uppercase; font-weight: 700; font-size: large;">${country.name.official}</p>    
