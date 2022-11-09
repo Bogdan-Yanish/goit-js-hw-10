@@ -43,7 +43,7 @@ function showCountriesList(countries) {
     .map((country) => {
        return `
        <li class="country__item">
-            <img src="${country.flags} 
+            <img src="${country.flags.svg} 
             alt="${country.name.official} flag" 
             width="80px" 
             height="50px"/>
@@ -61,7 +61,7 @@ function showCountriesInfo(countries) {
     .map((country) => {
         return `<ul class="country__item">
         <li>
-            <img style="" src="${country.flags} 
+            <img style="" src="${country.flags.svg} 
             alt="${country.name.official} flag"
             width="150px" 
             height="70px"/>
