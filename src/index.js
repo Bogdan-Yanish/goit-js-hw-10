@@ -13,7 +13,7 @@ const countryInfo = document.querySelector('.country-info');
 searchForm.addEventListener('input', debounceValue);
 
 function searchCountry(event) {
-        event.preventDefault();
+    event.preventDefault();
         const name = event.target.value.trim();
        
         fetchCountries(name)
@@ -24,24 +24,6 @@ function searchCountry(event) {
             });    
 }
 
-// function renderListCountries(countries) {
-//     clearData;
-//     try {
-//         if (countries.length >= 2 && countries.length <= 10) {
-//             showCountriesList(countries);            
-//         } else if (countries.length > 10) {
-//             Notify.info('Too many matches found. Please enter a more specific name.');
-//         } else if (countries.length === 1) {
-//            // showCountriesList(countries)
-//             // showCountriesInfo(countries);
-//             const markup = showCountriesInfo(countries);
-//             countryInfo.innerHTML = markup;
-//         }
-//     } catch (error) {
-//         console.log(error.message);
-//     }
-// }
-    
 function renderListCountries(countries) {
    
     if (countries.length > 10) {
@@ -61,10 +43,10 @@ function showCountriesList(countries) {
     .map((country) => {
        return `
        <li class="country__item">
-            <img style="display:block" src="${country.flags[0]} 
+            <img src="${country.flags.svg} 
             alt="${country.name.official} flag" 
-            width="70px" 
-            height="40px">
+            width="80px" 
+            height="50px">
             ${country.name.official}
        </li>                
         `;
@@ -79,11 +61,11 @@ function showCountriesInfo(countries) {
     .map((country) => {
         return `<ul class="country__item">
         <li>
-            <img style="" src="${country.flags} 
+            <img style="" src="${country.flags.svg} 
             alt="${country.name.official} flag"
-            width="70px" 
-            height="40px">
-            <p style="">${country.name.official}</p>    
+            width="150px" 
+            height="70px">
+            <p style="text-transform: uppercase; font-weight: 700; font-size: large;">${country.name.official}</p>    
         </li>
         <li>
             <p>Capital: ${country.capital}</p>
