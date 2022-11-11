@@ -23,7 +23,7 @@ function searchCountry(event) {
         fetchCountries(name)
             .then(renderListCountries)
             .catch ((error) => {
-                clearData;
+                clearData();
                 Notify.failure("Oops, there is no country with that name");
             });    
 }
