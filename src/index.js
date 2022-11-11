@@ -15,6 +15,10 @@ searchForm.addEventListener('input', debounceValue);
 function searchCountry(event) {
     event.preventDefault();
         const name = event.target.value.trim();
+
+        if (!name.length) {
+            return;
+          }
        
         fetchCountries(name)
             .then(renderListCountries)
